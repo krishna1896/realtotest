@@ -1,33 +1,42 @@
 <div class="container">
     <div class="sign-in-container">
-        <form #frm="ngForm">
-            <h1>Log in</h1>
-            <hr/>
-            <div class="form-group row">
-                <label class="col-md-4"> Email: </label>
-                <div class="col-md-8">
-                    <input type="text" class="form-control" #email="ngModel" name="email" [(ngModel)]="user.email" required />
-                    <span *ngIf="email.errors && (email.touched || email.dirty)" style="color: red">
-                        <span [hidden]="!email.errors.required"> Enter Email</span>
-                    </span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-md-4"> Password: </label>
-                <div class="col-md-8">
-                    <input type="password" class="form-control" #password="ngModel" name="password" [(ngModel)]="user.password" required />
-                    <span *ngIf="password.errors && (password.touched || password.dirty)" style="color: red">
-                        <span [hidden]="!password.errors.required"> Enter Password</span>
-                    </span>
-                </div>
-            </div>
-            <div class="row">
-                <button class="btn btn-primary" (click)="loggedIn(frm)">Sign In</button>
-            </div>
-            <div style="float: right;" id="design">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title"> Log In </h4>
+                        <hr/>
+                        <form #frm="ngForm">
+                            <div class="form-group row">
+                                <label class="col-md-4"> Email: </label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" #email="ngModel" name="email" [(ngModel)]="user.email" required />
+                                    <span *ngIf="email.errors && (email.touched || email.dirty)" style="color: red">
+                                        <span [hidden]="!email.errors.required"> Enter Email</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-4"> Password: </label>
+                                <div class="col-md-8">
+                                    <input type="password" class="form-control" #password="ngModel" name="password" [(ngModel)]="user.password" required />
+                                    <span *ngIf="password.errors && (password.touched || password.dirty)" style="color: red">
+                                        <span [hidden]="!password.errors.required"> Enter Password</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div align="center">
+                                <button class="btn btn-primary" (click)="loggedIn(frm)">Sign In</button>
+                            </div>
+                            <div style="float: right;" id="design">
 
-                <button class="btn btn-sm btn-link" (click)="register()"> Register</button>
+                                <button class="btn btn-sm btn-link" (click)="register()"> Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </form>
+        </div>
+
     </div>
 </div>
