@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="sign-up-container">
+        <form #frm="ngForm">
+            <h3>Register User</h3>
+            <hr/>
+            <div class="form-group row">
+                <label class="col-md-4"> Email: </label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" #email="ngModel" name="email" [(ngModel)]="user.email" required />
+                    <span *ngIf="email.errors && (email.touched || email.dirty)" style="color: red">
+                        <span [hidden]="!email.errors.required"> Enter Email</span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-4"> Name: </label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" #name="ngModel" name="name" [(ngModel)]="user.name" required />
+                    <span *ngIf="name.errors && (name.touched || name.dirty)" style="color: red">
+                        <span [hidden]="!name.errors.required"> Enter Name</span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-4"> Date of Birth: </label>
+                <div class="col-md-8">
+                    <input type="date" class="form-control" #dob="ngModel" name="dob" [(ngModel)]="user.dob" required />
+                    <span *ngIf="dob.errors && (dob.touched || dob.dirty)" style="color: red">
+                        <span [hidden]="!dob.errors.required"> Select Date of Birth</span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-4"> Country: </label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" #country="ngModel" name="country" [(ngModel)]="user.country" required />
+                    <span *ngIf="country.errors && (country.touched || country.dirty)" style="color: red">
+                        <span [hidden]="!country.errors.required"> Enter Country</span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-4"> Avatar: </label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" #avatar="ngModel" name="avatar" [(ngModel)]="user.avatar" required />
+                    <span *ngIf="avatar.errors && (avatar.touched || avatar.dirty)" style="color: red">
+                        <span [hidden]="!avatar.errors.required"> Enter Avatar</span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-4"> Password: </label>
+                <div class="col-md-8">
+                    <input type="password" class="form-control" #password="ngModel" name="password" [(ngModel)]="user.password" required />
+                    <span *ngIf="password.errors && (password.touched || password.dirty)" style="color: red">
+                        <span [hidden]="!password.errors.required"> Enter Password</span>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary" (click)="addUser(frm)">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
